@@ -1,0 +1,8 @@
+# robots.txt — LRZR Production
+# MODIFIER : remplacer lrzrprod.github.io par votre vrai domaine si différent
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lrzrprod.github.io/sitemap.xml
