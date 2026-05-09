@@ -43,7 +43,7 @@ const CATEGORIES = [
   {
     id:       'portrait',
     label:    'Portraits',
-    cover:    'assets/images/portrait-1.jpg',
+    cover:    'https://i.ibb.co/hFpw1GnB/portrait-1.jpg',
     coverAlt: 'Portrait — LRZR Production',
     photos: [
       { src: 'https://i.ibb.co/hFpw1GnB/portrait-1.jpg', alt: '' },
