@@ -229,7 +229,7 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 100; /* au dessus du menu mobile (z-index: 98) */
   padding: 1.25rem var(--container-pad);
   transition: background var(--transition-slow), backdrop-filter var(--transition-slow);
 }
@@ -305,6 +305,8 @@ section {
   gap: 5px;
   width: 28px;
   padding: 4px;
+  position: relative;
+  z-index: 201; /* toujours au dessus du menu ouvert */
 }
 
 .nav__burger span {
@@ -348,7 +350,7 @@ section {
   background-image: url('assets/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Parallax léger — désactiver sur mobile (voir media query) */
+  background-attachment: scroll; /* fixed supprimé — causait des freezes */
 }
 
 /* Dégradé overlay principal */
@@ -1297,8 +1299,7 @@ section {
 
   /* Désactiver parallax sur tablette */
   .hero {
-    background-attachment: scroll;
-  }
+    }
 }
 
 /* ---- Mobile ---- */
@@ -1316,11 +1317,12 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 2.5rem;
     font-size: 1.1rem;
     transform: translateX(100%);
     transition: transform var(--transition-slow);
-    z-index: 99;
+    z-index: 200; /* au dessus de tout y compris le hero */
   }
 
   .nav__links.open {
@@ -1330,6 +1332,9 @@ section {
   .nav__links a {
     font-size: 1rem;
     letter-spacing: 0.12em;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 
   .nav__cta {
@@ -1789,4 +1794,11 @@ section {
 .hero__dot {
   min-height: 24px;
   padding: 10px 4px;
+}
+
+/* ================================================================
+   ISOLATION — empêche les sections de passer au dessus du menu
+   ================================================================ */
+.hero, .about, .portfolio-preview, .services, .contact, .site-footer {
+  isolation: isolate;
 }
