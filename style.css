@@ -229,7 +229,7 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100; /* au dessus du menu mobile (z-index: 98) */
+  z-index: 9998;
   padding: 1.25rem var(--container-pad);
   transition: background var(--transition-slow), backdrop-filter var(--transition-slow);
 }
@@ -306,7 +306,7 @@ section {
   width: 28px;
   padding: 4px;
   position: relative;
-  z-index: 201; /* toujours au dessus du menu ouvert */
+  z-index: 10000; /* toujours au dessus du menu ouvert */
 }
 
 .nav__burger span {
@@ -1312,8 +1312,11 @@ section {
 
   .nav__links {
     position: fixed;
-    inset: 0;
-    background: var(--color-bg);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0a0a0a;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1321,8 +1324,9 @@ section {
     gap: 2.5rem;
     font-size: 1.1rem;
     transform: translateX(100%);
-    transition: transform var(--transition-slow);
-    z-index: 200; /* au dessus de tout y compris le hero */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 9999;
+    overflow: hidden;
   }
 
   .nav__links.open {
@@ -1794,11 +1798,4 @@ section {
 .hero__dot {
   min-height: 24px;
   padding: 10px 4px;
-}
-
-/* ================================================================
-   ISOLATION — empêche les sections de passer au dessus du menu
-   ================================================================ */
-.hero, .about, .portfolio-preview, .services, .contact, .site-footer {
-  isolation: isolate;
 }
