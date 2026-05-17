@@ -342,15 +342,7 @@ section {
   padding-bottom: var(--space-xl);
   overflow: hidden;
 
-  /*
-    MODIFIER : remplacer cette image par la vôtre.
-    Chemin recommandé : assets/images/hero-bg.jpg
-    Dimensions recommandées : 2400x1600px, compressée (< 500 Ko)
-  */
-  background-image: url('assets/images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll; /* fixed supprimé — causait des freezes */
+  /* Fond géré par le carousel JS — pas d'image statique nécessaire */
 }
 
 /* Dégradé overlay principal */
