@@ -5,6 +5,7 @@ HTML/CSS/JS vanilla, zéro framework, déployable sur GitHub Pages.
 
 ---
 
+
 ## 🚀 Déploiement sur GitHub Pages — étape par étape
 
 ### Prérequis
